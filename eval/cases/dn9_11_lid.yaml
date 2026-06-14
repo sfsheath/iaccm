@@ -1,0 +1,45 @@
+id: dn9_11_lid
+title: ARS-C conical lid with raised rim
+
+# Drop the original photos in eval/fixtures/sherd_dn9_11/ (see that folder's README).
+images:
+  - fixtures/sherd_dn9_11/01_top.jpg
+  - fixtures/sherd_dn9_11/02_profile.jpg
+  - fixtures/sherd_dn9_11/03_knob.jpg
+
+intake:
+  region: Central Mediterranean
+  fabric: brick-red, fine, matte-to-semi-lustrous orange-red slip
+  part: lid
+  notes: >
+    central knob; concentric grooves and a rouletted band on the upper face; everted/raised rim.
+
+expected:
+  form_id: CLAIR-C Dn9.11
+  ware: CLAIR-C
+  vessel_class: couvercle / lid
+  date: [450, 520]
+  source:
+    short_title: DICOCER (Lattara 6)
+    page_printed: 188
+
+# The one feature that separates the leading candidates.
+discriminator:
+  feature: rim profile
+  answer: everted/raised
+  splits:
+    everted/raised: CLAIR-C Dn9.11
+    plain rounded: CLAIR-D At53.5
+    collared: CLAIR-A 16
+
+# Breadth check: retrieval MUST surface all three African lid forms across wares.
+# A set missing CLAIR-C is the founding bug reproducing itself.
+must_include_candidates:
+  - CLAIR-A 16
+  - CLAIR-C Dn9.11
+  - CLAIR-D At53.5
+
+notes: >
+  Founding regression case. First misread as a dish base, then as a generic ARS lid. The full
+  African-lid candidate set must be enumerated across wares; the raised rim is the discriminator
+  that selects Dn9.11.

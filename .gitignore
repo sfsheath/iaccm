@@ -1,0 +1,37 @@
+# --- Copyright firewall: never commit source PDFs or rendered plates ---
+corpus/**
+!corpus/.gitkeep
+!corpus/README.md
+**/*.plate.png
+.cache/
+
+# --- Derived index: vectors are local; the shareable bundle is exported explicitly ---
+index/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.uv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+dist/
+build/
+
+# --- Models / weights pulled locally ---
+models/
+*.gguf
+
+# --- OS / editor ---
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# --- Secrets ---
+.env
+.env.*
+!.env.example
