@@ -139,3 +139,119 @@ All 87 DICOCER categories below, in the book's own alphabetical order, with the 
 - UNGUENT — Unguentariums (unguentaria) → p. 581
 
 *No DICOCER chapter covers lamps; see `lamps.md` for that category.*
+
+### Sciallano & Sibella 1994 — `SciallanoMSibellaP1994-AmphoresCommentIdentifier.pdf`  **[ingest source: `sciallano-1994`; pages listed are PDF pages, offset 0]**
+
+*Amphores : comment les identifier?* A different genre from DICOCER: **one named amphora type per
+entry** (mostly one page; a few span two), each with a profile drawing + B&W photo, a metadata box
+(Origine / Produit transporté / Époque de circulation / distribution map), and a row of dated
+provenance variants. The type **name** is the identity (no catalogue numbers); the embedded text
+layer is unusable OCR, so ingest renders and reads each page. Ingest with:
+`iaccm ingest corpus/SciallanoMSibellaP1994-AmphoresCommentIdentifier.pdf --source sciallano-1994 --pages 24-105`.
+
+**Transport amphorae** → `amphorae.md` (entries, PDF pp. 24–105; partial index, type names verified at ingest)
+
+- Corinthienne A et A' → p. 24
+- Ionio-massaliète → p. 25
+- Massaliète → p. 26
+- Étrusque → p. 27
+- Dressel 1A → p. 31
+- Dressel 1B → p. 32
+- Dressel 6A → p. 35
+- Dressel 2-4 d'Italie → p. 37
+- Forlimpopoli → p. 38
+- Dressel 16 → p. 40
+- Fréjus / Lenzbourg → p. 41
+- Gauloise 1 → p. 42
+- Gauloise 2 → p. 43
+- Gauloise 4 → p. 45
+- Gauloise 5 → p. 46
+- Pascual 1 → p. 47
+- Dressel 2-4 d'Espagne → p. 48
+- Dressel 7 → p. 52
+- Dressel 7-11 → p. 56
+- Pompéi VII → p. 57
+- Dressel 38 / Beltrán → p. 58
+- Beltrán IIB → p. 59
+- Amphore à saumure d'Espagne → p. 60
+- Dressel 14 A et 14 B → p. 63
+- Dressel 20 → p. 64
+- Dressel 23 → p. 66
+- Almagro 51 A-B → p. 68
+- Mañá D → p. 74
+- Ramon 18 / Mañá E → p. 75
+- Maurétanie Césarienne / Dressel 30 → p. 76
+- Tripolitaine ancienne → p. 77
+- Africaine II → p. 80
+- Spatheion → p. 82
+- Africaines cylindriques → p. 83
+- Rhodienne → p. 87
+- Dressel 35 (?) → p. 90
+- Diverses amphores grecques → p. 94
+- Agora G199 → p. 96
+- Late Roman 1 → p. 99
+- Late Roman 2 → p. 100
+- Late Roman 5/6 → p. 103
+
+### Peacock & Williams 1991 — `PeacockDWilliamsD1991-AmphoraeRomanEconomy.pdf`  **[ingest source: `peacock-1991`; printed→PDF offset: +19]**
+
+*Amphorae and the Roman Economy.* A third genre: **one named amphora type per *multi-page* entry**
+(the "guide to the more common Roman amphorae", **Classes 1–55**, printed pp. 82–211). Each class
+opens with a `CLASS N (concordances…)` header followed by standardized sections (DISTINCTIVE
+FEATURES / ORIGIN / OCCURRENCE / PRINCIPAL CONTENT / DATE RANGE / FABRIC) and a profile drawing —
+but the entry **spans 2–9 pages and the continuation pages carry no class anchor**, so it cannot be
+read one page at a time. The `class-window` layout scans the text layer for `CLASS N` headers, then
+renders each class's full page span as one multi-image call. **`Class N` is the catalog id**; the
+header's published concordances (Dressel, Ostia, Camulodunum, Callender, Beltrán, Keay…) become
+`cross_refs`. Ingest with:
+`iaccm ingest corpus/PeacockDWilliamsD1991-AmphoraeRomanEconomy.pdf --source peacock-1991 --pages 82-211 --batch`.
+
+The Appendix "unclassified amphorae" (Classes 56–66, printed pp. 212–217) is a denser multi-per-page
+layout and is **deferred** (not yet ingested). Class → primary Dressel/named concordance (partial,
+verified at ingest):
+
+- Class 3 / 4 / 5 → Dressel 1A / 1B / 1C
+- Class 9 → 'Rhodian Type' (Ostia LXV; Camulodunum 184; Callender 7)
+- Class 25 → 'Globular amphora'; Dressel 20 (Beltrán V; Ostia I; Callender 2) — Baetican oil
+- Class 27 / 28 / 29 / 30 → Gauloise 4 (Pelichet 47) / Gauloise 1 / Gauloise 3 / Gauloise 5
+- Class 34 → Africana II 'Grande' (Beltrán 56; Ostia III; Keay IV–VII)
+- Class 51 → 'Spatheion' (Benghazi LR amphora 8)
+- Class 53 → Egloff 172
+- Class 55 → Furrowed-rim amphora
+
+### Hayes 1972 — `Hayes_1972_Late Roman Pottery.pdf`  **[ingest source: `hayes-1972`; pages are PDF pages, offset 0]**
+
+*Late Roman Pottery* — the reference for African Red Slip (ARS) and the other Late Roman fine wares.
+527 pages, **fully scanned (no text layer)** — read visually like Ettlinger. **Text catalogue pages**
+carry bold `FORM N` headers + a paraphrasable description + a numbered list of dated specimens; the
+running header is the *book title*, NOT the ware. **Figure plates** (interspersed) show profile
+drawings labelled `FORM N`; their bbox merges into the text record by id (field-union `store.merge`).
+
+Two things make Hayes special: (1) the **ware is a section** spanning hundreds of pages and is never
+on the page; (2) **form numbers repeat across wares** (ARS Form 8 ≠ Late Roman C Form 8). So identity
+must be ware-qualified — supply the ware per page-range with **`--ware`**, which is forced onto every
+record (`id = "<ware> Form N"`). The dated specimen lists are summarized into a date range, never
+ingested as forms. Exclude the **ARS decoration/stamp** section (printed ≈211–302 — not vessel forms).
+
+Re-ingest sequence (always `--batch`; `--no-resume` on the first clean run). **PDF page ranges below
+are TBD — pin them with a one-time visual pass of the contents** (the printed ranges in the table are
+not the PDF pages; measure the offset first):
+
+```
+iaccm forget-source "Hayes_1972_Late Roman Pottery.pdf"          # drop the broken 362 records
+# then, per ware-section (PDF pages, offset 0):
+iaccm ingest "corpus/Hayes_1972_Late Roman Pottery.pdf" --source hayes-1972 --ware "African Red Slip Ware" --pages <ARS> --batch --no-resume
+iaccm ingest "corpus/Hayes_1972_Late Roman Pottery.pdf" --source hayes-1972 --ware "Tripolitanian Red Slip Ware" --pages <…> --batch
+iaccm ingest "corpus/Hayes_1972_Late Roman Pottery.pdf" --source hayes-1972 --ware "Çandarlı Ware" --pages <…> --batch
+iaccm ingest "corpus/Hayes_1972_Late Roman Pottery.pdf" --source hayes-1972 --ware "Late Roman C Ware" --pages <…> --batch
+iaccm ingest "corpus/Hayes_1972_Late Roman Pottery.pdf" --source hayes-1972 --ware "Cypriot Red Slip Ware" --pages <…> --batch
+iaccm ingest "corpus/Hayes_1972_Late Roman Pottery.pdf" --source hayes-1972 --ware "Egyptian Red Slip Ware" --pages <…> --batch
+iaccm ingest "corpus/Hayes_1972_Late Roman Pottery.pdf" --source hayes-1972 --ware "Gaulish Terra Sigillata Grise" --pages <…> --batch
+iaccm ingest "corpus/Hayes_1972_Late Roman Pottery.pdf" --source hayes-1972 --ware "Other Late Roman Wares" --pages <…> --batch
+```
+
+Section → **printed** page ranges (from the table of contents; convert to PDF pages at pin time):
+African Red Slip Ware vessel forms 13–210 · (ARS decoration/stamps 211–302 — **excluded**) ·
+Tripolitanian Red Slip ~303–309 · African lamps 310–315 (optional) · Çandarlı 316–322 ·
+Late Roman C 323–370 · Cypriot Red Slip 371–386 · Egyptian Red Slip A/B/C 387–399 ·
+Gaulish T.S. grise 400–404 · Other Late Roman wares 405–420.

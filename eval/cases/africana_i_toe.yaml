@@ -1,0 +1,35 @@
+# Real identification (2026-06-17): an Africana I ("piccolo") amphora toe that the dialogue first
+# drifted to the "Greek amphora" track on and then could not converge — because the loop ranked the
+# whole 1214-record catalogue instead of narrowing to the observed part. After the part-first fix,
+# triage reads the part as a TOE, retrieval returns the full amphora-toe set (which contains the
+# African forms), and the in-family African match wins over the Greek shape-analogues.
+#
+# Seeded from a genuine find (not fabricated). Photos go under eval/fixtures/sherd_africana_i_toe/.
+id: africana_i_toe
+
+images:
+  - sherd_africana_i_toe/01_toe.jpg   # short hollow spike on a cylindrical body; reddish-buff fabric
+
+intake: >
+  Amphora foot fragment: a short, stubby hollow spike on a cylindrical lower body, in a sandy
+  reddish-to-buff fabric with traces of a thin slip and a small disc/roundel on the surface.
+  Diagnostic part is the toe.
+
+expected:
+  form_id: "Amphore africaine Africaine I"   # = Africana I "piccolo" (xref "Africano piccolo")
+  family: "Amphore africaine"
+
+# Retrieval must surface the FULL amphora-toe set across wares (rule 2); the African forms must be
+# present (the bug was that the model never saw them compete with the Greek toes).
+must_include_candidates:
+  - "Amphore africaine Africaine I"
+  - "Amphore africaine Africaine II"
+  - "Amphore africaine Tripolitaine ancienne"
+  - "Amphore africaine Africaines cylindriques de moyennes dimensions"
+  - "Amphore africaine Africaines cylindriques de grandes dimensions"
+  - "Amphore africaine Spathéion"
+  - "Amphore africaine Keay LXII"
+
+notes: >
+  Must NOT conclude a Greek amphora (e.g. "Amphore grecque …") — those are at most cross-family
+  shape-analogues for a toe and are barred from the conclusion by the in-family backstop.

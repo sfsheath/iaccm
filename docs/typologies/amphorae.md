@@ -6,11 +6,18 @@ Scope: two-handled transport/storage amphorae of the Mediterranean, from Phoenic
 
 Work from the most diagnostic part down:
 
-**Toe / foot** — often the single most informative sherd.
+**Toe / foot** — often the single most informative sherd. Read the spike shape *together with* the
+fabric and body profile; spike form alone recurs across families, so never fix a family on it in
+isolation.
 - Long hollow spike → Greco-Italic, some Dressel 1, eastern types.
 - Solid pointed spike → many Roman wine amphorae (Dressel 1, Dressel 2–4).
 - Small solid button/knob on a globular body → Baetican oil (Dressel 20, Tejarillo/Dressel 23).
-- **Short solid rounded knob/peg on a biconical (carinated) body → western-Mediterranean island forms (Ibiza/Ebusitan, Balearic, Spanish Levant). See Corrections below.**
+- Short hollow or short solid spike/peg on a **cylindrical** body, in a sandy reddish-to-buff African
+  (Tunisian/Tripolitanian) fabric → African cylindrical amphorae: **Africana I ("piccolo") / Africana
+  II ("grande")**, Keay series, Tripolitanian. African cylindrical fabric + a stubby spike is the
+  combination to recognise here, distinct from the long hollow Greco-Italic spike above.
+- Short solid rounded knob/peg on a biconical (carinated) body → western-Mediterranean island forms
+  (Ibiza/Ebusitan, Balearic, Spanish Levant).
 - Flat or ring base → late antique/Byzantine and some eastern types; LRA 3.
 - Hollow rounded/rod toe → Late Roman Amphora 1.
 
@@ -29,10 +36,6 @@ Use the label exactly as published.
 - **Roman/Late Roman, African:** Africana I/II (piccolo/grande), Keay series (Keay I–LXXII) for late Roman western Med, Tripolitanian I–III.
 - **Late Roman, eastern:** Late Roman Amphora 1–7 (LRA 1 Cilicia/Cyprus; LRA 2 Aegean; LRA 3 western Asia Minor, often two-handled micaceous; LRA 4 Gaza; LRA 5/6 Levant; LRA 7 Egypt).
 - **Regional islands & Iberia:** Ebusitan (Ibiza) productions within Ramon's PE/T-series; Balearic and Spanish-Levantine biconical forms.
-
-## Corrections & field notes
-
-*(None yet. Add user corrections here; they override generic matching.)*
 
 ## Sources
 

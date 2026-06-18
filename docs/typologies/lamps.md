@@ -17,10 +17,6 @@ Scope: ceramic oil lamps. Load this file when the triage key in `CLAUDE.md` poin
 - **Late Roman / African:** **Hayes** lamp types (often = ARS lamps); Atlante I; "Christian" lamps with cross/figural discus.
 - **Regional:** local lamp series published site-by-site for the eastern Mediterranean and North Africa.
 
-## Corrections & field notes
-
-*(None yet. Add user corrections here; they override generic matching.)*
-
 ## Sources
 
 See `SOURCES.md`. Key references to add as introduced:

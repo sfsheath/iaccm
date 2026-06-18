@@ -9,6 +9,7 @@ from .models import (
     PartType,
     SourcePointer,
 )
+from .vessel_class import normalize_vessel_class
 
 __all__ = [
     "ARCHETYPES",
@@ -20,4 +21,5 @@ __all__ = [
     "Identification",
     "PartType",
     "SourcePointer",
+    "normalize_vessel_class",
 ]

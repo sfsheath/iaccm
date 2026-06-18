@@ -5,8 +5,11 @@ corpus/**
 **/*.plate.png
 .cache/
 
-# --- Derived index: vectors are local; the shareable bundle is exported explicitly ---
+# --- Local-only derived artifacts (vectors, caches): never shared ---
 index/
+
+# (The shareable derived product — bundle/catalog.jsonl — is NOT ignored: it is facts only,
+#  committed and distributable so others can drop in their own copy of the source PDFs.)
 
 # --- Python ---
 __pycache__/
@@ -24,6 +27,9 @@ build/
 # --- Models / weights pulled locally ---
 models/
 *.gguf
+
+# --- Claude Code personal overrides (project settings.json may be committed) ---
+.claude/settings.local.json
 
 # --- OS / editor ---
 .DS_Store

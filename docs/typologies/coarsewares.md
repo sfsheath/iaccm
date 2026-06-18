@@ -19,10 +19,6 @@ Scope: utilitarian kitchen and storage vessels — cooking pots, casseroles, lid
 - **Byzantine:** glazed and unglazed cooking/common wares published in regional corpora (e.g. Saraçhane for Constantinople).
 - **Storage:** dolia / pithoi (regional); often described rather than type-numbered.
 
-## Corrections & field notes
-
-*(None yet. Add user corrections here; they override generic matching.)*
-
 ## Sources
 
 See `SOURCES.md`. Key references to add as introduced:

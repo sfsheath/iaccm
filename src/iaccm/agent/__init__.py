@@ -1,5 +1,5 @@
-"""Dialog agent: the identification cascade with human-in-the-loop interrupts."""
+"""Dialog agent: the identification cascade as a plain, testable controller."""
 
-from .graph import AgentState, build_graph
+from .identify import Identifier, TurnResult
 
-__all__ = ["AgentState", "build_graph"]
+__all__ = ["Identifier", "TurnResult"]

@@ -1,0 +1,32 @@
+# Ingest-quality goldens for the peacock-1991 profile (class-window layout).
+#
+# These are HAND-VERIFIED against the real book (the CLASS headers + their printed concordances were
+# read directly from the PDF), per MEMORY: never fabricate eval data. They assert STRUCTURE, not
+# exact strings — the model is nondeterministic, so we check "this class yields one record with these
+# fields populated and these published concordances present", not a verbatim description.
+#
+# Run live (opt-in, costs a model call):  pytest -m ingest eval/test_ingest.py
+source: peacock-1991
+pdf: PeacockDWilliamsD1991-AmphoraeRomanEconomy.pdf
+cases:
+  - class: 4               # CLASS 4 (Dressel 1B; Ostia XX; Camulodunum 181; Callender 1)
+    scan_pages: "89-90"    # printed range that brackets just this class's window
+    form_id: "Class 4"
+    require_nonempty: [description, origin, contents]
+    require_dates: true
+    cross_refs_any: ["Dressel 1B", "Ostia XX"]
+    require_bbox: true
+  - class: 30              # CLASS 30 (Gauloise 5)
+    scan_pages: "148-149"
+    form_id: "Class 30"
+    require_nonempty: [description, origin]
+    require_dates: true
+    cross_refs_any: ["Gauloise 5"]
+    require_bbox: true
+  - class: 34              # CLASS 34 (Africana II 'Grande'; Beltran 56; Ostia III; Keay IV-VII)
+    scan_pages: "155-156"
+    form_id: "Class 34"
+    require_nonempty: [description, origin]
+    require_dates: true
+    cross_refs_any: ["Africana II", "Beltran 56", "Ostia III"]
+    require_bbox: true

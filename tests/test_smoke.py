@@ -14,10 +14,12 @@ def test_package_imports() -> None:
 def test_archetype_vocabulary() -> None:
     from iaccm.catalog import ARCHETYPES, ARCHETYPES_BY_ID
 
-    assert len(ARCHETYPES) == 20
+    assert len(ARCHETYPES) == 27  # 20 base + 7 whole-amphora bodies (Sciallano entries)
     ids = [a.id for a in ARCHETYPES]
     assert len(ids) == len(set(ids)), "archetype ids must be unique"
     assert "L-CONE-KNOB" in ARCHETYPES_BY_ID  # the lid archetype for the seed case
+    assert "A-OVOID" in ARCHETYPES_BY_ID  # whole-amphora body archetype
+    assert all(a.svg for a in ARCHETYPES), "every archetype needs a silhouette"
 
 
 def test_models_instantiate() -> None:
@@ -26,7 +28,7 @@ def test_models_instantiate() -> None:
     rec = FormRecord(
         id="CLAIR-C Dn9.11",
         ware="CLAIR-C",
-        vessel_class="couvercle / lid",
+        vessel_class="lid",
         part_types=[PartType.LID],
         attributes={"rim": "everted/raised"},
         date_start=450,

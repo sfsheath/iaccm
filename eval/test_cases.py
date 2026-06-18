@@ -28,10 +28,13 @@ def test_case_is_well_formed(case_file: Path) -> None:
     assert case["expected"]["form_id"] in case["must_include_candidates"]
 
 
-@pytest.mark.xfail(reason="identification pipeline not implemented yet", strict=False)
+@pytest.mark.xfail(reason="end-to-end ID needs a live model + fixture images", strict=False)
 @pytest.mark.parametrize("case_file", CASE_FILES, ids=lambda p: p.stem)
 def test_case_resolves_end_to_end(case_file: Path) -> None:
     case = _load(case_file)
-    from iaccm.agent.graph import build_graph  # noqa: F401
+    from iaccm.agent.identify import Identifier  # noqa: F401
 
-    pytest.skip("wire build_graph().invoke(intake) and assert result.best == expected.form_id")
+    pytest.skip(
+        "wire Identifier().step(case['intake'], images=…) and assert the in-family conclusion is "
+        f"{case['expected']['form_id']!r}"
+    )

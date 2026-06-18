@@ -11,8 +11,9 @@ PDFs, working the identification in dialog with the user.
 - `docs/copyright.md` — the **firewall** around source PDFs. Non-negotiable.
 - `docs/SOURCES.md` — the typology page index (DICOCER form → printed page). Ingest turns this
   kind of mapping into the structured catalog.
-- `docs/typologies/*.md` — per-category diagnostic keys and **corrections** (corrections override
-  generic matching and seed `eval/`).
+- `docs/typologies/*.md` — per-category diagnostic keys. **Generic, timeless process only** — no
+  dated entries, no per-find "user correction" notes. Specific identifications/corrections live as
+  regression cases in `eval/cases/*.yaml`, never as prose here (these docs ship to the world).
 
 ## Architecture (where things go)
 
@@ -46,7 +47,7 @@ PDFs, working the identification in dialog with the user.
 
 ## Conventions
 
-- Python ≥3.11, typed, `pydantic` models for all cross-module data (catalog records, candidates,
+- Python ≥3.13, typed, `pydantic` models for all cross-module data (catalog records, candidates,
   identification results). `ruff` + `mypy` clean.
 - Deterministic, testable seams: ingest and retrieval runnable headless for `eval/`.
 - Every correction/identification becomes an `eval/cases/*.yaml` regression case.
