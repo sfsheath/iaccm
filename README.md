@@ -1,6 +1,6 @@
-# IACCM — Identification of Archaeological Ceramics in the Central Mediterranean
+# IACCM — Identifying of Archaeological Ceramics in the Central Mediterranean
 
-An open-source, local-first tool for identifying photographs of ceramic sherds — especially
+An open-source, local-first tool for identifying photographs or profile drawings of ceramic sherds — especially
 small diagnostic fragments (rims, bases, handles, lids) — against **published typologies the
 user supplies as PDFs**. A multimodal LLM works the identification *in dialog*: it takes your
 opening notes and photos, retrieves candidate forms from a pre-built index, opens only the
@@ -64,7 +64,4 @@ pytest
 
 ## Status
 
-Walking skeleton: modules are stubbed with typed interfaces and `NotImplementedError` + TODOs.
-First end-to-end target is `eval/cases/dn9_11_lid.yaml` — a real sherd that must resolve to
-**DICOCER CLAIR-C Dn9.11**. Pick up the build in Claude Code; start from `docs/method.md` and the
-hard rules in `CLAUDE.md`.
+

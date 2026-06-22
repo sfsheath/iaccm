@@ -16,8 +16,6 @@ dependencies = [
     "pillow>=10.3",
     "pymupdf>=1.24",       # PDF render + text extraction
     "lancedb>=0.13",       # embedded, file-based vector store (no server)
-    "langgraph>=0.2",      # agent graph with human-in-the-loop interrupts
-    "langchain-core>=0.3",
     "gradio>=5",           # local browser UI (messages-format Chatbot)
     "typer>=0.12",         # CLI entry points
 ]

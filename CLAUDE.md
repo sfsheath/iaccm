@@ -20,11 +20,11 @@ PDFs, working the identification in dialog with the user.
 | Concern | Module | Notes |
 |---|---|---|
 | Settings / paths / model provider | `src/iaccm/config.py` | pydantic-settings, reads `.env`, paths relative to a configurable root |
-| Model access | `src/iaccm/model/client.py` | OpenAI-compatible; provider-agnostic |
+| Model access | `src/iaccm/model/` | `base.py` ABC + `anthropic_client.py` (default) / `openai_client.py` (Featherless, Ollama, any OpenAI-compatible); prompted-JSON structured output |
 | PDF → records | `src/iaccm/ingest/` | PyMuPDF render, OCR fallback, structured extraction |
 | Form catalog + archetypes | `src/iaccm/catalog/` | one record per published form; ~20 profile archetypes |
 | Candidate retrieval | `src/iaccm/retrieve/` | structured filter + vector + archetype funnel |
-| Dialog/agent | `src/iaccm/agent/graph.py` | LangGraph; human-in-the-loop interrupts |
+| Dialog/agent | `src/iaccm/agent/identify.py` | two-call cascade (triage → part-bounded rank); category keys via `guidance.py`; human-in-the-loop in the UI |
 | UI | `src/iaccm/ui/app.py` | Gradio workbench |
 | CLI | `src/iaccm/cli.py` | `iaccm ingest`, `iaccm ui`, `iaccm id` |
 
@@ -65,10 +65,10 @@ The bar for "it works": index/prompt/model changes still pass `eval/cases/dn9_11
 
 ## Suggested first moves (for whoever picks this up)
 
-1. Implement `config.py` + `model/client.py` and prove a round-trip to Ollama.
+1. Implement `config.py` + the `model/` provider seam and prove a round-trip (Anthropic default; Featherless/Ollama via `--provider`).
 2. `ingest`: render DICOCER pages, extract per-form records for the Claire wares (no text-only
    pruning — render and read). Populate `catalog`.
 3. Author the 20 archetype silhouettes in `catalog/archetypes.py` (original SVGs).
 4. `retrieve`: enumerate the full lid candidate set; wire the archetype funnel.
-5. `agent/graph.py`: the cascade with a human-in-the-loop `ask_user` interrupt.
+5. `agent/identify.py`: the two-call cascade (triage → part-bounded rank) with a human-in-the-loop step.
 6. Make `eval/cases/dn9_11_lid.yaml` pass end to end.
